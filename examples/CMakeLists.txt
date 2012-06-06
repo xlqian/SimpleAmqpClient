@@ -1,0 +1,2 @@
+add_executable(remote_disconnect remote_disconnect.cpp)
+target_link_libraries(remote_disconnect SimpleAmqpClient)

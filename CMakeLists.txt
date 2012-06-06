@@ -112,6 +112,7 @@ if (ENABLE_TESTING)
 	add_subdirectory(testing)
 endif (ENABLE_TESTING)
 
+add_subdirectory(examples)
 
 # Documentation generation
 SET(DOXYFILE_LATEX "NO")
