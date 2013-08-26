@@ -488,10 +488,10 @@ void Channel::BasicPublish(const std::string &exchange_name,
                           message->getAmqpBody()));
 
     // If we've done things correctly we can get one of 4 things back from the broker
-    // - basic.ack - our channel is in confirm mode, messsage was 'dealt with' by the broker
-    // - basic.return then basic.ack - the message wasn't delievered, but was dealt with
-    // - channel.close - probably tried to publish to a non-existant exchange, in any case error!
-    // - connection.clsoe - something really bad happened
+    // - basic.ack - our channel is in confirm mode, message was 'dealt with' by the broker
+    // - basic.return then basic.ack - the message wasn't delivered, but was dealt with
+    // - channel.close - probably tried to publish to a non-existent exchange, in any case error!
+    // - connection.close - something really bad happened
     const boost::array<boost::uint32_t, 2> PUBLISH_ACK = { { AMQP_BASIC_ACK_METHOD, AMQP_BASIC_RETURN_METHOD } };
     amqp_frame_t response;
     boost::array<amqp_channel_t, 1> channels = {{ channel }};
